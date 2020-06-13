@@ -21,7 +21,7 @@ class ViewController: UIViewController {
        }
 
     @IBAction func back(_ sender: UIButton) {//back
-        var result = formulaLabel.text!.dropLast()
+        let result = formulaLabel.text!.dropLast()
         formulaLabel.text = String(result)
     }
     
@@ -47,22 +47,25 @@ class ViewController: UIViewController {
         guard let senderedText = sender.titleLabel?.text else{
             return
         }
-        //titleを取得
-        // print(formulaText) 式の場所の数値 123 + 4 = 1234としてる
-        // print(senderedText) これが現在入力値
-        // print(formulaText.suffix(1)) //末尾
-        let last = formulaText.suffix(1)
-        let matched = matches(for: "[^0-9]", in: String(last))
-        let now_matched = matches(for: "[^0-9]", in: String(senderedText))
-//        print(matched.count) //1なら一文字前が記号
+        // senderedText 入力値
 
-        if matched.count == 1 && now_matched.count == 1{
+        let last = formulaText.suffix(1)  //末尾
+        let matched = matches(for: "[^0-9]", in: String(last))  //only symbol
+
+        //first input
+        if formulaText.count == 0 && matches(for: "[.]", in: String(senderedText)).count == 1{
+            formulaLabel.text = formulaText + senderedText
             return
         }
 
-        // if last.pregMatche(pattern: "+-÷x") {
-        //     print("ok")
-        // }
+        if matched.count >= 1{ //記号が重複しないようにする
+            let now_matched = matches(for: "[^0-9]", in: String(senderedText))
+            if now_matched.count == 1{ //formula末尾とnowinputが記号なら、nowinputにreplace
+                let r = formulaText.dropLast()
+                formulaLabel.text = r + senderedText
+                return 
+            }
+        }
 
         formulaLabel.text = formulaText + senderedText
     }
