@@ -25,7 +25,8 @@ class ViewController: UIViewController {
             return
         }
         let formula: String = formatFormula(formulaText)
-        answerLabel.text = evalFormula(formula)
+        answerLabel.text = formulaText + "=" + evalFormula(formula)
+        formulaLabel.text = evalFormula(formula)
 
     }
 
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
         let last = formulaText.suffix(1)
         let matched = matches(for: "[^0-9]", in: String(last))
         let now_matched = matches(for: "[^0-9]", in: String(senderedText))
-        print(matched.count) //1なら一文字前が記号
+//        print(matched.count) //1なら一文字前が記号
 
         if matched.count == 1 && now_matched.count == 1{
             return
