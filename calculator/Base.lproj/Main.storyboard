@@ -159,11 +159,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbx-gf-ZL1">
-                                <rect key="frame" x="143" y="277" width="31" height="30"/>
+                                <rect key="frame" x="144" y="277" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="xbtn"/>
+                                <state key="normal" title="x"/>
                                 <connections>
-                                    <action selector="inputFormula:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NPA-N5-JF3"/>
+                                    <action selector="back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z6q-aH-WJG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8G-t8-xdT">
@@ -194,8 +194,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="answerLabel" destination="ET1-5u-DH6" id="sVK-ST-UrF"/>
                         <outlet property="formulaLabel" destination="JYv-hU-ucA" id="yRD-TD-nP6"/>
+                        <outlet property="historyLabel" destination="ET1-5u-DH6" id="2kn-nV-nYR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

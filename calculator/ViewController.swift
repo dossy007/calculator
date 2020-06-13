@@ -10,29 +10,34 @@ import UIKit
 import Expression
 import Foundation
 class ViewController: UIViewController {
+    @IBOutlet weak var historyLabel: UILabel!
     @IBOutlet weak var formulaLabel: UILabel!
-    @IBOutlet weak var answerLabel: UILabel!
 
     override func viewDidLoad() { //load setup
            super.viewDidLoad()
            formulaLabel.text = ""
-           answerLabel .text = ""
+           historyLabel .text = ""
            // Do any additional setup after loading the view.
        }
 
+    @IBAction func back(_ sender: UIButton) {//back
+        var result = formulaLabel.text!.dropLast()
+        formulaLabel.text = String(result)
+    }
+    
     @IBAction func answerCalculator(_ sender: UIButton) { // =
         guard let formulaText = formulaLabel.text else{
             return
         }
         let formula: String = formatFormula(formulaText)
-        answerLabel.text = formulaText + "=" + evalFormula(formula)
+        historyLabel.text = formulaText + "=" + evalFormula(formula)
         formulaLabel.text = evalFormula(formula)
 
     }
 
     @IBAction func clearCalculation(_ sender: UIButton) { //c
         formulaLabel.text = ""
-        answerLabel.text = ""
+        historyLabel.text = ""
     }
 
     @IBAction func inputFormula(_ sender: UIButton) { //0~9 / * +-.
