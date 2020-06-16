@@ -10,6 +10,9 @@ import UIKit
 import Expression
 import Foundation
 class ViewController: UIViewController {
+    @IBOutlet weak var history1: UILabel!
+    @IBOutlet weak var history2: UILabel!
+    @IBOutlet weak var history3: UILabel!
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var historyLabel: UILabel!
     @IBOutlet weak var formulaLabel: UILabel!
@@ -34,6 +37,13 @@ class ViewController: UIViewController {
         guard let formulaText = formulaLabel.text else{
             return
         }
+
+        switch historyLabel.text{
+            case "":
+            print("何もしない")
+            default:
+            history1.text = historyLabel.text
+        }
         let formula: String = formatFormula(formulaText)
         historyLabel.text = formulaText + "=" + evalFormula(formula)
         formulaLabel.text = evalFormula(formula)
@@ -45,6 +55,9 @@ class ViewController: UIViewController {
     @IBAction func clearCalculation(_ sender: UIButton) { //c
         formulaLabel.text = ""
         historyLabel.text = ""
+        history1.text = ""
+        history2.text = ""
+        history3.text = ""
     }
 
     @IBAction func inputFormula(_ sender: UIButton) { //0~9 / * +-.
