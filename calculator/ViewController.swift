@@ -10,14 +10,19 @@ import UIKit
 import Expression
 import Foundation
 class ViewController: UIViewController {
+    @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var historyLabel: UILabel!
     @IBOutlet weak var formulaLabel: UILabel!
-
+    // var history: [Optional<String>]
     override func viewDidLoad() { //load setup
            super.viewDidLoad()
            formulaLabel.text = ""
            historyLabel .text = ""
+           //optional<String>
            // Do any additional setup after loading the view.
+
+           scroll.layer.borderColor = UIColor.red.cgColor
+           scroll.layer.borderWidth = 1
        }
 
     @IBAction func back(_ sender: UIButton) {//back
@@ -33,6 +38,8 @@ class ViewController: UIViewController {
         historyLabel.text = formulaText + "=" + evalFormula(formula)
         formulaLabel.text = evalFormula(formula)
 
+        // history.append(historyLabel.text)
+        // print(history)
     }
 
     @IBAction func clearCalculation(_ sender: UIButton) { //c

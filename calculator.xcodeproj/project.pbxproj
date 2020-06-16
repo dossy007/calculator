@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9939D4CD2498C12A00C341B5 /* algorithm.png in Resources */ = {isa = PBXBuildFile; fileRef = 9939D4CC2498C12A00C341B5 /* algorithm.png */; };
 		99A23228248F879D00CCB8AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A23227248F879D00CCB8AE /* AppDelegate.swift */; };
 		99A2322A248F879D00CCB8AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A23229248F879D00CCB8AE /* SceneDelegate.swift */; };
 		99A2322C248F879D00CCB8AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2322B248F879D00CCB8AE /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		8662186E6AD46F8368544146 /* Pods-calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calculator.release.xcconfig"; path = "Target Support Files/Pods-calculator/Pods-calculator.release.xcconfig"; sourceTree = "<group>"; };
+		9939D4CC2498C12A00C341B5 /* algorithm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = algorithm.png; path = ../../../Downloads/algorithm.png; sourceTree = "<group>"; };
 		99A23224248F879D00CCB8AE /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A23227248F879D00CCB8AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A23229248F879D00CCB8AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				99A23227248F879D00CCB8AE /* AppDelegate.swift */,
 				99A23229248F879D00CCB8AE /* SceneDelegate.swift */,
 				99A2322B248F879D00CCB8AE /* ViewController.swift */,
+				9939D4CC2498C12A00C341B5 /* algorithm.png */,
 				99A2322D248F879D00CCB8AE /* Main.storyboard */,
 				99A23230248F87A100CCB8AE /* Assets.xcassets */,
 				99A23232248F87A100CCB8AE /* LaunchScreen.storyboard */,
@@ -141,7 +144,6 @@
 				B87E5841FB5AE8EE27E8F09B /* Pods-calculator.debug.xcconfig */,
 				8662186E6AD46F8368544146 /* Pods-calculator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -262,6 +264,7 @@
 				99A23234248F87A100CCB8AE /* LaunchScreen.storyboard in Resources */,
 				99A23231248F87A100CCB8AE /* Assets.xcassets in Resources */,
 				99A2322F248F879D00CCB8AE /* Main.storyboard in Resources */,
+				9939D4CD2498C12A00C341B5 /* algorithm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
