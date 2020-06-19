@@ -10,22 +10,50 @@ import UIKit
 import Expression
 import Foundation
 class ViewController: UIViewController {
+    @IBOutlet weak var lightShadow: UIButton!
+    @IBOutlet var background: UIView!
+    @IBOutlet weak var numberbtn: UIButton!
+    @IBOutlet var historyCollection: [UILabel]!
     @IBOutlet weak var history1: UILabel!
     @IBOutlet weak var history2: UILabel!
     @IBOutlet weak var history3: UILabel!
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var historyLabel: UILabel!
     @IBOutlet weak var formulaLabel: UILabel!
-    // var history: [Optional<String>]
     override func viewDidLoad() { //load setup
            super.viewDidLoad()
            formulaLabel.text = ""
            historyLabel .text = ""
            //optional<String>
            // Do any additional setup after loading the view.
+        
+        //style
+        background.backgroundColor = UIColor.hex(string: "#F3F3F3" ,alpha: 1)
 
-           scroll.layer.borderColor = UIColor.red.cgColor
-           scroll.layer.borderWidth = 1
+        //scroll
+        scroll.layer.borderWidth = 1
+
+        //numberbtn
+        numberbtn.layer.cornerRadius = 25
+
+        numberbtn.backgroundColor = UIColor.hex(string: "#F3F3F3" ,alpha: 1)
+        numberbtn.layer.shadowColor = UIColor.hex(string: "#E1E1E1",alpha: 1).cgColor
+        numberbtn.layer.shadowRadius = 3
+        numberbtn.layer.shadowOffset = CGSize(width: 1, height: 1)
+        numberbtn.layer.shadowOpacity = 5
+        
+        lightShadow.layer.shadowColor = UIColor.hex(string: "#FFFFFF",alpha: 1).cgColor
+        lightShadow.layer.shadowOffset = CGSize(width:-1,height: -1)
+
+        //formula
+        formulaLabel.textAlignment = NSTextAlignment.right
+        formulaLabel.font = formulaLabel.font.withSize(30)
+        //history
+        historyLabel.textAlignment = NSTextAlignment.right
+        //historylabel
+        history1.textAlignment = NSTextAlignment.right
+        history2.textAlignment = NSTextAlignment.right
+        history3.textAlignment = NSTextAlignment.right
        }
 
     @IBAction func back(_ sender: UIButton) {//back
@@ -42,12 +70,15 @@ class ViewController: UIViewController {
             case "":
             print("何もしない")
             default:
+            history3.text = history2.text
+            history2.text = history1.text
             history1.text = historyLabel.text
+            scroll.contentSize.height =  scroll.contentSize.height + 20
         }
         let formula: String = formatFormula(formulaText)
         historyLabel.text = formulaText + "=" + evalFormula(formula)
         formulaLabel.text = evalFormula(formula)
-
+        print(historyCollection[1].text)
         // history.append(historyLabel.text)
         // print(history)
     }
@@ -141,3 +172,19 @@ class ViewController: UIViewController {
 
 }
 
+
+extension UIColor {
+    class func hex ( string : String, alpha : CGFloat) -> UIColor {
+        let string_ = string.replacingOccurrences(of: "#", with: "")
+        let scanner = Scanner(string: string_ as String)
+        var color: UInt32 = 0
+        if scanner.scanHexInt32(&color) {
+            let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
+            let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
+            let b = CGFloat(color & 0x0000FF) / 255.0
+            return UIColor(red:r,green:g,blue:b,alpha:alpha)
+        } else {
+            return UIColor.white;
+        }
+    }
+}
