@@ -10,6 +10,8 @@ import UIKit
 import Expression
 import Foundation
 class ViewController: UIViewController {
+    @IBOutlet weak var history_box: UIView!
+    @IBOutlet weak var caret: UILabel!
     @IBOutlet weak var lightShadow: UIButton!
     @IBOutlet var background: UIView!
     @IBOutlet weak var numberbtn: UIButton!
@@ -47,13 +49,22 @@ class ViewController: UIViewController {
 
         //formula
         formulaLabel.textAlignment = NSTextAlignment.right
-        formulaLabel.font = formulaLabel.font.withSize(30)
+        formulaLabel.font = formulaLabel.font.withSize(50)
         //history
         historyLabel.textAlignment = NSTextAlignment.right
         //historylabel
         history1.textAlignment = NSTextAlignment.right
         history2.textAlignment = NSTextAlignment.right
         history3.textAlignment = NSTextAlignment.right
+
+        //historybox
+        // history_box.layer.shadowColor = UIColor.hex(string: "#E1E1E1",alpha: 1).cgColor
+        history_box.layer.shadowColor = UIColor.hex(string: "#FF0000",alpha: 1).cgColor
+        history_box.layer.shadowOffset = CGSize(width: 20, height: 20)
+
+
+
+        self.flashLabel() //caret点滅
        }
 
     @IBAction func back(_ sender: UIButton) {//back
@@ -78,7 +89,7 @@ class ViewController: UIViewController {
         let formula: String = formatFormula(formulaText)
         historyLabel.text = formulaText + "=" + evalFormula(formula)
         formulaLabel.text = evalFormula(formula)
-        print(historyCollection[1].text)
+//        print(historyCollection[1].text)
         // history.append(historyLabel.text)
         // print(history)
     }
@@ -119,6 +130,7 @@ class ViewController: UIViewController {
         }
 
         formulaLabel.text = formulaText + senderedText
+      
     }
 
     private func formatFormula(_ formula: String) -> String{
@@ -168,8 +180,19 @@ class ViewController: UIViewController {
         print("invalid regex: \(error.localizedDescription)")
         return []
     }
-}
 
+}
+    private func flashLabel(){ //caret点滅
+
+        UIView.animate(withDuration: 1.0,
+                        delay: 0.0,
+                        options: .repeat,
+                        animations: {
+                            self.caret.alpha = 0.0
+            }) { (_) in
+                self.caret.alpha = 1.0
+            }
+    }
 }
 
 
