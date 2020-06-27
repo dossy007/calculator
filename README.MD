@@ -1,6 +1,7 @@
 使用確認
 
 
+
 https://rara-world.com/swift-button-layout-css/
 btn装飾
 
@@ -82,3 +83,4 @@ https://qiita.com/hachinobu/items/57d4c305c907805b4a53#uiviewanimationoptionstra
 
 
 https://teratail.com/questions/195185
+https://xd.adobe.com/view/42ab2284-8b29-4a4f-710c-2df3ee072f39-349a/
