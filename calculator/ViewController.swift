@@ -10,11 +10,12 @@ import UIKit
 import Expression
 import Foundation
 class ViewController: UIViewController {
+    @IBOutlet var btnback: [UIView]!
+    @IBOutlet var numberbtn: [UIButton]!
+    //    @IBOutlet weak var numlight: UIView!
     @IBOutlet weak var history_box: UIView!
     @IBOutlet weak var caret: UILabel!
-    @IBOutlet weak var lightShadow: UIButton!
     @IBOutlet var background: UIView!
-    @IBOutlet weak var numberbtn: UIButton!
     @IBOutlet var historyCollection: [UILabel]!
     @IBOutlet weak var history1: UILabel!
     @IBOutlet weak var history2: UILabel!
@@ -36,16 +37,17 @@ class ViewController: UIViewController {
         scroll.layer.borderWidth = 1
 
         //numberbtn
-        numberbtn.layer.cornerRadius = 25
-
-        numberbtn.backgroundColor = UIColor.hex(string: "#F3F3F3" ,alpha: 1)
-        numberbtn.layer.shadowColor = UIColor.hex(string: "#E1E1E1",alpha: 1).cgColor
-        numberbtn.layer.shadowRadius = 3
-        numberbtn.layer.shadowOffset = CGSize(width: 1, height: 1)
-        numberbtn.layer.shadowOpacity = 5
         
-        lightShadow.layer.shadowColor = UIColor.hex(string: "#FFFFFF",alpha: 1).cgColor
-        lightShadow.layer.shadowOffset = CGSize(width:-1,height: -1)
+
+        numberbtn.forEach { n in
+        shw(n)
+        }
+        
+        //numlight
+        btnback.forEach { b in
+            lighting(b)
+        }
+//        lighting(numlight)
 
         //formula
         formulaLabel.textAlignment = NSTextAlignment.right
@@ -192,6 +194,23 @@ class ViewController: UIViewController {
             }) { (_) in
                 self.caret.alpha = 1.0
             }
+    }
+
+    private func shw(_ btn: UIButton!){
+        btn.backgroundColor = UIColor.hex(string: "#F3F3F3" ,alpha: 1)
+        btn.layer.shadowColor = UIColor.hex(string: "#E1E1E1",alpha: 1).cgColor
+        btn.layer.shadowRadius = 5
+        btn.layer.shadowOffset = CGSize(width: 5, height: 5)
+        btn.layer.shadowOpacity = 3
+    }
+    private func lighting(_ light: UIView){
+        light.layer.shadowColor = UIColor.hex(string: "#FFFFFF",alpha: 1).cgColor
+        light.layer.shadowOffset = CGSize(width:-10,height: -10)
+        light.backgroundColor = UIColor.hex(string: "#F3F3F3" ,alpha: 1)
+        light.layer.shadowColor = UIColor.white.cgColor
+        light.layer.shadowRadius = 5
+        light.layer.shadowOffset = CGSize(width: -5, height: -5)
+        light.layer.shadowOpacity = 3
     }
 }
 
