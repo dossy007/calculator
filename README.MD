@@ -67,9 +67,16 @@ layer.maskToBounds
 layer.cornerRadius 34.5
 
 影光は一旦おk
-位置調整を仕様
-all clearを基準に y 375 
+位置調整をしよう
+all clearを基準に y 375
 最下層は790ほど
+
+415 /5 = 83
+90づつ開けてみよう
+
+<!-- 375 458 541 624 707  790 -->
+
+375 465 555 645 735
 
 
 https://dishware.sakura.ne.jp/swift/archives/329
