@@ -41,6 +41,8 @@ class ViewController: UIViewController {
 
         numberbtn.forEach { n in
         shw(n)
+        // n.titleLabel?.font =  UIFont(name: "YourfontName", size: 70)
+
         }
         
         //numlight
@@ -51,18 +53,27 @@ class ViewController: UIViewController {
 
         //formula
         formulaLabel.textAlignment = NSTextAlignment.right
-        formulaLabel.font = formulaLabel.font.withSize(50)
-        //history
+        formulaLabel.font = formulaLabel.font.withSize(75)
+        formulaLabel.font = UIFont.boldSystemFont(ofSize: 60.0)
+        // formulaLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 50.0)
+
+
+
+
+        //historyLabel
         historyLabel.textAlignment = NSTextAlignment.right
-        //historylabel
+        historyLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+
+
+        //history
         history1.textAlignment = NSTextAlignment.right
         history2.textAlignment = NSTextAlignment.right
         history3.textAlignment = NSTextAlignment.right
 
         //historybox
         // history_box.layer.shadowColor = UIColor.hex(string: "#E1E1E1",alpha: 1).cgColor
-        history_box.layer.shadowColor = UIColor.hex(string: "#FF0000",alpha: 1).cgColor
-        history_box.layer.shadowOffset = CGSize(width: 20, height: 20)
+//        history_box.layer.shadowColor = UIColor.hex(string: "#FF0000",alpha: 1).cgColor
+//        history_box.layer.shadowOffset = CGSize(width: 20, height: 20)
 
 
 

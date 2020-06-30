@@ -71,13 +71,19 @@ layer.cornerRadius 34.5
 all clearを基準に y 375
 最下層は790ほど
 
-415 /5 = 83
 90づつ開けてみよう
-
-<!-- 375 458 541 624 707  790 -->
 
 375 465 555 645 735
 
+bt 修正終了
+次、上のhistoryあたりのboldや幅の修正
+ok
+
+次は、btnの文字を少し大きくする
+system 30
+secondary label color
+
+大きさなどの絶対値のauto layoutを決めよう。そのために、testを用いて練習する
 
 https://dishware.sakura.ne.jp/swift/archives/329
 
