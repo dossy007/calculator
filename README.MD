@@ -83,6 +83,8 @@ ok
 system 30
 secondary label color
 
+auto layoutを実装する。 11で
+
 大きさなどの絶対値のauto layoutを決めよう。そのために、testを用いて練習する
 
 https://dishware.sakura.ne.jp/swift/archives/329
